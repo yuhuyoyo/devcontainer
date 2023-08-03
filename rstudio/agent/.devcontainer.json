@@ -1,0 +1,11 @@
+{
+  "name": "Proxy agent",
+  "dockerComposeFile": ["../docker-compose.yaml"],
+  "service": "agent",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/agent"
+  "containerEnv": {
+    "PORT": "${localEnv:PORT}",
+    "BACKEND_ID": "{localEnv:BACKEND_ID}" 
+  }
+}
