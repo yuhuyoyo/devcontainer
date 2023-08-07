@@ -1,0 +1,12 @@
+{
+  "name": "rstudio app",
+  "dockerComposeFile": ["docker-compose.yaml"],
+  "service": "app",
+  "shutdownAction": "none",
+  // Open the sub-folder with the source code
+  "workspaceFolder": "/workspace/rstudio"
+  "containerEnv": {
+     "PORT": "${localEnv:PORT}"
+   }
+  "remoteUser": "rstudio"
+}
