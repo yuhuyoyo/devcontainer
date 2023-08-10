@@ -1,0 +1,7 @@
+{
+    "name": "Google Cloud Storage FUSE",
+    "id": "gcsfuse",
+    "version": "1.0.0",
+    "description": "Support for GCS FUSE",
+    "capAdd": ["SYS_ADMIN"]
+}

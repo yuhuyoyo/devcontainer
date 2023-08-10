@@ -1,0 +1,12 @@
+{
+    "name": "RStudio",
+    "image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.2",
+    "overrideCommand": false,
+    "appPort": [6070, 8787],
+    "containerEnv": { "DISABLE_AUTH": "true" },
+    "mounts": [{"source": "/tmp/work", "target": "/home/rstudio", "type": "bind"}],
+    "features": { "./gcsfuse": {}, "ghcr.io/devcontainers/features/desktop-lite:1": {} },
+    "runArgs": [
+        "--device=/dev/fuse",
+    ]
+}
