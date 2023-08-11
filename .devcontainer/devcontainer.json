@@ -3,6 +3,15 @@
     "image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.2",
     "overrideCommand": false,
     "appPort": [6070, 8787],
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+          "label": "desktop"
+        },
+        "8787": {
+          "label": "rstudio"
+        }
+      },
     "containerEnv": { "DISABLE_AUTH": "true" },
     "features": { "./gcsfuse": {}, "ghcr.io/devcontainers/features/desktop-lite:1": {} },
     "runArgs": [
