@@ -2,8 +2,8 @@
 
 set -e -x
 
-user=$1
-workDirectory=$2
+user=rstudio
+workDirectory=/home/$user
 #######################################
 # Emit a message with a timestamp
 #######################################
