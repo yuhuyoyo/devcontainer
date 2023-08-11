@@ -3,7 +3,7 @@
     "image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.2",
     "overrideCommand": false,
     "appPort": [6070, 8787],
-    "forwardPorts": [6080],
+    "forwardPorts": [6080, 8787],
     "portsAttributes": {
         "6080": {
           "label": "desktop"
