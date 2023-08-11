@@ -16,5 +16,6 @@
     "features": { "./gcsfuse": {}, "ghcr.io/devcontainers/features/desktop-lite:1": {} },
     "runArgs": [
         "--device=/dev/fuse",
-    ]
+    ],
+    "postStartCommand": "./post-startup.sh"
 }
