@@ -45,7 +45,7 @@ readonly TERRA_INSTALL_PATH="/usr/bin/terra"
 
 readonly TERRA_GIT_REPOS_DIR="${workDirectory}/repos"
 
-readonly TERRA_BOOT_SCRIPT="$\{USER_TERRA_CONFIG_DIR}/instance-boot.sh"
+readonly TERRA_BOOT_SCRIPT="${USER_TERRA_CONFIG_DIR}/instance-boot.sh"
 readonly TERRA_BOOT_SERVICE_NAME="terra-instance-boot.service"
 readonly TERRA_BOOT_SERVICE="/etc/systemd/system/${TERRA_BOOT_SERVICE_NAME}"
 
@@ -54,7 +54,7 @@ cd /tmp || exit
 
 # Send stdout and stderr from this script to a file for debugging.
 # Make the .terra directory as the user so that they own it and have correct linux permissions.
-${RUN_AS_USER} "mkdir -p '$\{USER_TERRA_CONFIG_DIR}'"
+${RUN_AS_USER} "mkdir -p '${USER_TERRA_CONFIG_DIR}'"
 exec >> "${POST_STARTUP_OUTPUT_FILE}"
 exec 2>&1
 
@@ -185,7 +185,7 @@ ${RUN_AS_USER} "\
  terra user ssh-key get --include-private-key --format=JSON >> '${USER_SSH_DIR}/id_rsa.tmp' || true"
 if [[ -s "${USER_SSH_DIR}/id_rsa.tmp" ]]; then
  ${RUN_AS_USER} "\
-   install --mode 0600 /dev/null '$\{USER_SSH_DIR}/id_rsa' && \
+   install --mode 0600 /dev/null '${USER_SSH_DIR}/id_rsa' && \
    jq -r '.privateSshKey' '${USER_SSH_DIR}/id_rsa.tmp' > '${USER_SSH_DIR}/id_rsa'"
 fi
 rm -f "${USER_SSH_DIR}/id_rsa.tmp"
