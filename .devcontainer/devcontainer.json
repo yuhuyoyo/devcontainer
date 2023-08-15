@@ -17,5 +17,6 @@
     "runArgs": [
         "--device=/dev/fuse",
     ],
-    "postStartCommand": ["./.devcontainer/post-startup.sh"]
+    "postStartCommand": ["./.devcontainer/post-startup.sh"],
+    "remoteUser": "root"
 }
