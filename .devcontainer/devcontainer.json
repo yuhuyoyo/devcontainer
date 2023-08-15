@@ -17,5 +17,5 @@
     "runArgs": [
         "--device=/dev/fuse",
     ],
-    "postStartCommand": ["bash", "-c",  "./post-startup.sh"]
+    "postStartCommand": ["./.devcontainer/post-startup.sh"]
 }
