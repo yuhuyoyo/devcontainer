@@ -45,10 +45,6 @@ readonly TERRA_INSTALL_PATH="/usr/bin/terra"
 
 readonly TERRA_GIT_REPOS_DIR="${workDirectory}/repos"
 
-readonly TERRA_BOOT_SCRIPT="${USER_TERRA_CONFIG_DIR}/instance-boot.sh"
-readonly TERRA_BOOT_SERVICE_NAME="terra-instance-boot.service"
-readonly TERRA_BOOT_SERVICE="/etc/systemd/system/${TERRA_BOOT_SERVICE_NAME}"
-
 # Move to the /tmp directory to let any artifacts left behind by this script can be removed.
 cd /tmp || exit
 
