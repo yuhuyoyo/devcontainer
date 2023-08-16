@@ -26,7 +26,7 @@ function set_guest_attributes() {
    -H "Metadata-Flavor: Google" \
    "http://metadata.google.internal/computeMetadata/v1/instance/guest-attributes/${attr_path}"
 }
-
+readonly STATUS_ATTRIBUTE="startup_script/status"
 readonly RUN_AS_USER="sudo -u ${user} bash -l -c"
 
 readonly USER_BASH_COMPLETION_DIR="${workDirectory}/.bash_completion.d"
