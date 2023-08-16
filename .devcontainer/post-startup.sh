@@ -82,7 +82,6 @@ EOF
 
 emit "Installing Java JDK ..."
 
-java -version
 # Set up a known clean directory for downloading the TAR and unzipping it.
 ${RUN_AS_USER} "mkdir -p '${JAVA_INSTALL_TMP}'"
 pushd "${JAVA_INSTALL_TMP}"
