@@ -221,4 +221,4 @@ ${RUN_AS_USER} "terra resource mount"
 # Let the UI know the script completed
 set_guest_attributes "${STATUS_ATTRIBUTE}" "COMPLETE"
 
-rm ${workDirectory}/post-startup.sh
+rm /workspaces/templates/.devcontainer/post-startup.sh
