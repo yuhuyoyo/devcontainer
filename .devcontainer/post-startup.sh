@@ -19,14 +19,6 @@ function get_metadata_value() {
    "http://metadata/computeMetadata/v1/${metadata_path}"
 }
 
-function set_guest_attributes() {
- local attr_path="${1}"
- local attr_value="${2}"
- curl -s -X PUT --data "${attr_value}" \
-   -H "Metadata-Flavor: Google" \
-   "http://metadata.google.internal/computeMetadata/v1/instance/guest-attributes/${attr_path}"
-}
-readonly STATUS_ATTRIBUTE="startup_script/status"
 readonly RUN_AS_USER="sudo -u ${user} bash -l -c"
 
 readonly USER_BASH_COMPLETION_DIR="${workDirectory}/.bash_completion.d"
@@ -206,8 +198,5 @@ ${RUN_AS_USER} "cd '${TERRA_GIT_REPOS_DIR}' && terra git clone --all"
 #############################
 
 ${RUN_AS_USER} "terra resource mount"
-
-# Let the UI know the script completed
-set_guest_attributes "${STATUS_ATTRIBUTE}" "COMPLETE"
 
 rm /workspaces/templates/.devcontainer/post-startup.sh
