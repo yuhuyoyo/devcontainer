@@ -204,16 +204,6 @@ ${RUN_AS_USER} "cd '${TERRA_GIT_REPOS_DIR}' && terra git clone --all"
 #############################
 # Mount buckets
 #############################
-emit "Installing GCS fuse..."
-
-apt-get install -y fuse
-
-export GCSFUSE_REPO=gcsfuse-\lsb_release -c -s\
-echo "deb https://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-
-apt-get update
-apt-get install -y gcsfuse
 
 ${RUN_AS_USER} "terra resource mount"
 
