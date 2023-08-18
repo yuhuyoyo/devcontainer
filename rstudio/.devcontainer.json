@@ -1,6 +1,6 @@
 {
   "name": "Rstudio app",
-  "dockerComposeFile": ["../docker-compose.yml"],
+  "dockerComposeFile": ["../docker-compose.yaml"],
   "service": "app",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
