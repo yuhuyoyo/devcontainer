@@ -208,5 +208,3 @@ apt-get update
 apt-get install -y gcsfuse
 
 # ${RUN_AS_USER} "terra resource mount"
-
-rm /workspaces/templates/.devcontainer/post-startup.sh
