@@ -1,6 +1,6 @@
 {
   "name": "Proxy agent",
-  "dockerComposeFile": ["../docker-compose.yml"],
+  "dockerComposeFile": ["../docker-compose.yaml"],
   "service": "agent",
   "shutdownAction": "none",
   "workspaceFolder": "/workspace/agent",
