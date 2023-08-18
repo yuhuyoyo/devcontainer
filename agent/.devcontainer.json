@@ -5,7 +5,7 @@
   "shutdownAction": "none",
   "workspaceFolder": "/workspace/agent",
   "containerEnv": {
-    "BACK_END": "${localEnv:BACK_END}",
+    "BACKEND": "${localEnv:RESOURCE_ID}",
     "PROXY": "${localEnv:PROXY}"
   }
 }
