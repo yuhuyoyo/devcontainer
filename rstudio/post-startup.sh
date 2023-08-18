@@ -207,6 +207,6 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 apt-get update
 apt-get install -y gcsfuse
 
-${RUN_AS_USER} "terra resource mount"
+# ${RUN_AS_USER} "terra resource mount"
 
 rm /workspaces/templates/.devcontainer/post-startup.sh
