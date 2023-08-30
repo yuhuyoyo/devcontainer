@@ -7,7 +7,7 @@
   "workspaceFolder": "/workspace/rstudio"
   "postCreateCommand": "../post-startup.sh",
   "remoteUser": "root",
-  "forwardingPorts": [8787],
+  "forwardPorts": [8787],
   "runArgs": [
     "--cap-add SYS_ADMIN", "--device /dev/fuse", "--security_opt apparmor:unconfined"
   ]
