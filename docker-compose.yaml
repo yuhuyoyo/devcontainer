@@ -5,6 +5,8 @@ services:
     image: "gcr.io/inverting-proxy/agent"
     restart: always
     environment:
+      PROXY: "${PROXY}"
+      BACKEND: "${RESOURCE_ID}"
       HOSTNAME: "application-server"
       PORT: '8787'
       SHIM_PATH: 'websocket-shim'
@@ -14,7 +16,7 @@ services:
     image: "ghcr.io/rocker-org/devcontainer/tidyverse:4.2"
     restart: always
     volumes:
-      - /home/rstudio
+      - .:/workspace:cached
     ports:
       - '8787:8787'
     environment:
