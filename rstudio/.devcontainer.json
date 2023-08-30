@@ -5,7 +5,7 @@
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/rstudio"
-  "postCreateCommand": "./post-startup.sh",
+  "postCreateCommand": "../post-startup.sh",
   "remoteUser": "root",
   "runArgs": [
     "--cap-add SYS_ADMIN", "--device /dev/fuse"
