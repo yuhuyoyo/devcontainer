@@ -8,6 +8,5 @@ services:
       - ..:/workspace:cached
     ports:
       - '8787:8787'
-    network_mode: "host"
     environment:
       "DISABLE_AUTH": "true"
