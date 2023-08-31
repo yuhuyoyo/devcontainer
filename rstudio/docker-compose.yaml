@@ -10,7 +10,8 @@ services:
       - '8787:8787'
     environment:
       "DISABLE_AUTH": "true"
+    networks:
+      - app-network
 networks:
-  default:
-    external:
-      name: app-network
+  app-network:
+    external: true
