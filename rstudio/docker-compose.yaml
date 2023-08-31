@@ -11,5 +11,6 @@ services:
     environment:
       "DISABLE_AUTH": "true"
 networks:
-  app_network:
-    external: true
+  default:
+    external:
+      name: app-network
