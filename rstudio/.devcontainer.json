@@ -6,5 +6,6 @@
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/rstudio"
   "postCreateCommand": "../post-startup.sh",
-  "remoteUser": "root"
+  "remoteUser": "root",
+  "runArgs": ["--cap-add", "SYS_ADMIN", "--device", "/dev/fuse", "--security-opt", "apparmor:unconfined"]
 }
