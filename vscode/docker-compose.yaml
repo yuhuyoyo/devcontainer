@@ -20,5 +20,5 @@ services:
     security_opt:
       - apparmor:unconfined
 networks:
-  app-network:
+  app_network:
     external: true
