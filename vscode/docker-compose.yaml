@@ -12,7 +12,7 @@ services:
       USER: "abc"
       DEFAULT_WORKSPACE: "/config"
     networks:
-      - app-network
+      - app_network
     cap_add:
       - SYS_ADMIN
     devices:
