@@ -12,7 +12,7 @@ services:
       USER: "abc"
       DEFAULT_WORKSPACE: "/config"
     networks:
-      - app_network
+      - app-network
     cap_add:
       - SYS_ADMIN
     devices:
@@ -20,5 +20,5 @@ services:
     security_opt:
       - apparmor:unconfined
 networks:
-  app_network:
+  app-network:
     external: true
