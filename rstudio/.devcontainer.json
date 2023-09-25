@@ -4,7 +4,7 @@
   "service": "app",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
-  "workspaceFolder": "/workspace/rstudio"
-  "postCreateCommand": "../post-startup.sh",
+  "workspaceFolder": "/workspace/rstudio",
+  "postCreateCommand": ["../post-startup.sh", "rstudio", "/home/rstudio"],
   "remoteUser": "root"
 }
