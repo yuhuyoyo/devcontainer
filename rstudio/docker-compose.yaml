@@ -6,14 +6,13 @@ services:
     restart: always
     volumes:
       - ..:/workspace:cached
+      - work:/home/rstudio
     ports:
       - '8787:8787'
     environment:
       "DISABLE_AUTH": "true"
     networks:
       - app-network
-    volumes:
-      - work:/home/rstudio
     cap_add:
       - SYS_ADMIN
     devices:
