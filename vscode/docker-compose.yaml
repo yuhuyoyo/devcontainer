@@ -6,6 +6,7 @@ services:
     restart: always
     volumes:
       - ..:/workspace:cached
+      - work:/config
     ports:
       - '8443:8443'
     environment:
@@ -13,8 +14,6 @@ services:
       DEFAULT_WORKSPACE: "/config"
     networks:
       - app-network
-    volumes:
-      - work:/config
     cap_add:
       - SYS_ADMIN
     devices:
