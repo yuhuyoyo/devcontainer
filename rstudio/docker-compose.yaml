@@ -12,6 +12,8 @@ services:
       "DISABLE_AUTH": "true"
     networks:
       - app-network
+    volumes:
+      - work:/home/rstudio
     cap_add:
       - SYS_ADMIN
     devices:
@@ -21,3 +23,5 @@ services:
 networks:
   app-network:
     external: true
+volumes:
+  work:
