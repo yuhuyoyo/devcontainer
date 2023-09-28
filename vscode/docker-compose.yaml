@@ -13,6 +13,8 @@ services:
       DEFAULT_WORKSPACE: "/config"
     networks:
       - app-network
+    volumes:
+      - work:/config
     cap_add:
       - SYS_ADMIN
     devices:
@@ -22,3 +24,5 @@ services:
 networks:
   app-network:
     external: true
+volumes:
+  work:
