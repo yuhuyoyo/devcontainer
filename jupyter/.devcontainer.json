@@ -1,9 +1,0 @@
-{
-  "name": "Jupyter app",
-  "dockerComposeFile": "docker-compose.yaml"
-  "service": "app",
-  "shutdownAction": "none",
-  "workspaceFolder": "/workspace/jupyter",
-  "postCreateCommand": ["../post-startup.sh", "jupyter", "/home/jupyter"],
-  "remoteUser": "root"
-}
