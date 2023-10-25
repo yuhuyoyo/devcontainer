@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/devcontainers/anaconda:0-3",
     "postStartCommand": "nohup bash -c 'jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root &'",
     "forwardPorts": [8888],
-    "appPorts": [8888],
+    "appPort": "8888",
     "capAdd": ["SYS_ADMIN"],
     "securityOpt": ["apparmor:unconfined"],
     "runArgs": [
