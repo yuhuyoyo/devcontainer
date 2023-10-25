@@ -7,5 +7,10 @@
     "forwardPorts": [
         8888
     ],
+    "capAdd": ["SYS_ADMIN"],
+    "securityOpt": ["apparmor:unconfined"],
+    "runArgs": [
+      "--network=app-network", "--name=application-server", "--devices=/dev/fuse"
+     ],
     "remoteUser": "root"
 }
