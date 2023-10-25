@@ -8,7 +8,7 @@
     "capAdd": ["SYS_ADMIN"],
     "securityOpt": ["apparmor:unconfined"],
     "runArgs": [
-      "--network=app-network", "--name=application-server", "--devices=/dev/fuse"
+      "--network=app-network", "--name=application-server"
      ],
     "remoteUser": "root"
 }
