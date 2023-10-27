@@ -5,6 +5,6 @@
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/jupyter",
-  "postCreateCommand": ["../post-startup.sh", "jovyan", "/home/jovyan/work"],
+  "postCreateCommand": ["../post-startup.sh", "jovyan", "/home/jovyan"],
   "remoteUser": "root"
 }
