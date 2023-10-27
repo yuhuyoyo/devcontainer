@@ -6,12 +6,12 @@ services:
     restart: always
     volumes:
       - ..:/workspace:cached
-      - work:/home/jovyan/work
+      - work:/home/jovyan
     ports:
       - '8888:8888'
     environment:
       JUPYTER_ENABLE_LAB: "yes"
-    command: "start-notebook.py --ServerApp.token='' --ServerApp.password='' --ServerApp.root_dir=/home/jovyan/work --ServerApp.allow_origin='*' --ServerApp.allow_remote_access=True --NotebookApp.open_browser=False"
+    command: "start-notebook.py --ServerApp.token='' --ServerApp.password='' --ServerApp.root_dir=/home/jovyan --ServerApp.allow_origin='*'"
     networks:
       - app-network
     cap_add:
