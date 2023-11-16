@@ -1,6 +1,6 @@
 {
   "build": { "dockerfile": "Dockerfile" },
 
-  "appPort": "5000",
+  "appPort": ["3000:3000"],
   "runArgs": [ "--name=application-server", "--network=app-network"]
 }
