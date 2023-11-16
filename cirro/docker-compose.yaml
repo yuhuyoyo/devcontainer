@@ -9,7 +9,7 @@ services:
     volumes:
       - ..:/workspace:cached
       - ./cirro_data:/cirro_data
-    command: cirro launch /cirro_data/pbmc3k.zarr --no-open --port 5000
+    command: cirro launch /cirro_data/pbmc3k.zarr --no-open --port 5000 --host application-server
     ports:
       - '5000:5000'
     networks:
