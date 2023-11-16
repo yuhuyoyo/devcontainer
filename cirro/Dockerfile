@@ -10,8 +10,6 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN python -m pip install --upgrade pip && python -m pip install cirrocumulus
 
-EXPOSE 5000:5000
-
 # Run cirrocumulus when the container launches with the specified command
 CMD ["cirro", "launch", "/app/cirro_data/pbmc3k.zarr/", "--no-open"]
 
