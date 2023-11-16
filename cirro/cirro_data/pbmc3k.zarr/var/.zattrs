@@ -1,0 +1,18 @@
+{
+    "_index": "id",
+    "column-order": [
+        "gene_ids",
+        "n_cells",
+        "mt",
+        "n_cells_by_counts",
+        "mean_counts",
+        "pct_dropout_by_counts",
+        "total_counts",
+        "highly_variable",
+        "means",
+        "dispersions",
+        "dispersions_norm"
+    ],
+    "encoding-type": "dataframe",
+    "encoding-version": "0.1.0"
+}
