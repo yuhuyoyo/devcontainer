@@ -1,0 +1,22 @@
+version: '2.4'
+services:
+  app:
+    container_name: "application-server"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ..:/workspace:cached
+      - ./cirro_data:/cirro_data
+    command: cirro launch /cirro_data/pbmc3k.zarr --no-open --port 5000 --host application-server
+    ports:
+      - '5000:5000'
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+volumes:
+  work:
