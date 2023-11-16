@@ -8,7 +8,8 @@ services:
     restart: always
     volumes:
       - ..:/workspace:cached
-      - work:/home/abc
+      - ./cirro_data:/cirro_data
+    command: cirro launch /cirro_data/pbmc3k.zarr --no-open --port 5000
     ports:
       - '5000:5000'
     networks:
