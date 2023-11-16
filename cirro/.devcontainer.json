@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "cicro",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "app",
@@ -6,4 +7,10 @@
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/cirro",
   "remoteUser": "root"
+=======
+  "build": { "dockerfile": "Dockerfile" },
+
+  "appPort": ["3000:3000"],
+  "runArgs": [ "--name=application-server", "--network=app-network"]
+>>>>>>> 0dde017590029cfc6795b0e8f35d2eba5ac7ba7a
 }
