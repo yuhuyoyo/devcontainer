@@ -6,5 +6,11 @@
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/rstudio",
   "postCreateCommand": ["../post-startup.sh", "rstudio", "/home/rstudio"],
+  "features": {
+        "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+            "packages": "github::USEPA/TADA,config,golem,readxl,writexl,leaflet,shiny,shinyWidgets,shinyjs,shinycssloaders,DT,ggplot2,shinybusy,dplyr,plyr,tidyr,scales,forcats,RColorBrewer,lubridate,plotly",
+            "installSystemRequirements": true
+        }
+    },
   "remoteUser": "root"
 }
