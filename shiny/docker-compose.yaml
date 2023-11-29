@@ -1,0 +1,58 @@
+version: "3.7"
+
+services:
+  hello:
+    image: registry.gitlab.com/analythium/shinyproxy-hello/hello:latest
+    restart: unless-stopped
+    ports:
+      - "9000:3838"
+    networks:
+      - app-network
+  pink:
+    build: ./pink
+    restart: always
+    expose:
+      - "3838"
+    networks:
+      - app-network
+  covidapp:
+    image: analythium/covidapp-shiny:minimal
+    restart: always
+    expose:
+      - "3838"
+    networks:
+      - app-network
+  app:
+    container_name: "application-server"
+    image: caddy:2.3.0-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - $PWD/log:/var/log/caddy
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - hello
+      - pink
+      - covidapp
+    environment:
+      - HOST=":80"
+      - EMAIL="yuhuyoyo@google.com"
+    networks:
+      - app-network
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+volumes:
+  caddy_data:
+  caddy_config:
+networks:
+  app-network:
+    external: true
