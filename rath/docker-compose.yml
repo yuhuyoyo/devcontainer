@@ -22,7 +22,6 @@ services:
   
   prediction-api:
     restart: always
-    network_mode: service:base
     build:
       context: ./services/prediction
       dockerfile: Dockerfile

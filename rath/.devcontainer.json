@@ -1,6 +1,6 @@
 {
   "name": "rath",
-  "dockerComposeFile": "docker-compose.yaml",
+  "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
