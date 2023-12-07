@@ -41,7 +41,6 @@ readonly JAVA_INSTALL_TMP="${USER_TERRA_CONFIG_DIR}/javatmp"
 
 # Variables for Workbench-specific code installed on the VM
 readonly TERRA_INSTALL_PATH="/usr/bin/terra"
-
 readonly WORKBENCH_GIT_REPOS_DIR="${workDirectory}/repos"
 
 # Move to the /tmp directory to let any artifacts left behind by this script can be removed.
@@ -124,9 +123,9 @@ if [[ "${TERRA_SERVER}" == *"verily"* ]]; then
   fi
   cliDistributionPath="$(echo ${versionJson} | jq -r '.cliDistributionPath')"
 
-  curl -L https://storage.googleapis.com/${cliDistributionPath#gs://}/download-install.sh | TERRA_CLI_SERVER=${TERRA_SERVER} bash && \
-  cp terra '${TERRA_INSTALL_PATH}' && \
-  chown --no-dereference "${user}" '${TERRA_INSTALL_PATH}'
+  ${RUN_AS_LOGIN_USER} "curl -L https://storage.googleapis.com/${cliDistributionPath#gs://}/download-install.sh | TERRA_CLI_SERVER=${TERRA_SERVER} bash" && \
+  cp terra ${TERRA_INSTALL_PATH} && \
+  chown --no-dereference "${user}" ${TERRA_INSTALL_PATH}
 else
   >&2 echo "ERROR: ${TERRA_SERVER} is not a known VWB server"
   exit 1
