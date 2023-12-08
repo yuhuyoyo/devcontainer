@@ -9,7 +9,7 @@ services:
     volumes:
       - ..:/workspace:cached
       - ./cirro_data:/cirro_data
-    command: cirro launch /cirro_data/pbmc3k.zarr --no-open --port 5000 --host application-server
+    command: cirro serve -b application-server:5000 --db_uri mongodb://user:pass@mongodb/cirro
     ports:
       - '5000:5000'
     cap_add:
@@ -18,5 +18,17 @@ services:
       - /dev/fuse
     security_opt:
       - apparmor:unconfined
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      - MONGO_INITDB_DATABASE=cirro
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data/db
 volumes:
   work:
