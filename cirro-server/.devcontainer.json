@@ -1,5 +1,5 @@
 {
-  "name": "cicro",
+  "name": "cicro-server",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "app",
   "shutdownAction": "none",
