@@ -9,7 +9,7 @@ services:
     volumes:
       - ..:/workspace:cached
       - ./cirro_data:/cirro_data
-    command: cirro serve -b application-server:5000 --db_uri mongodb://user:pass@mongodb/cirro
+    command: cirro serve -b application-server:5000
     ports:
       - '5000:5000'
     cap_add:
@@ -22,9 +22,12 @@ services:
       - mongodb
   mongodb:
     image: mongodb/mongodb-community-server:6.0-ubi8
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - 27017:27017
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=user
-      - MONGO_INITDB_ROOT_PASSWORD=pass
-      - MONGO_INITDB_DATABASE=cirro
+      - MONGO_INITDB_DATABASE=cirrocumulus
 volumes:
   work:
+  mongodata:
