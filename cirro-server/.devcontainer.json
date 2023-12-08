@@ -4,6 +4,6 @@
   "service": "app",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
-  "workspaceFolder": "/workspace/cirro",
+  "workspaceFolder": "/workspace/cirro-server",
   "remoteUser": "root"
 }
