@@ -1,10 +1,9 @@
 {
-  "name": "cicro",
+  "name": "cicro-server",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "app",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
-  "workspaceFolder": "/workspace/cirro",
-  "postCreateCommand": ["../post-startup.sh", "abc", "/app"],
+  "workspaceFolder": "/workspace/cirro-server",
   "remoteUser": "root"
 }
