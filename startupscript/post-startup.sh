@@ -21,7 +21,7 @@ function emit() {
 }
 readonly -f emit
 
-source ${cloud}/get_metadata_attributes.sh
+source /workspace/startupscript/${cloud}/get_metadata_attributes.sh
 
 readonly RUN_AS_LOGIN_USER="sudo -u ${user} bash -l -c"
 
