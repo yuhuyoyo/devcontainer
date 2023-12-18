@@ -182,9 +182,9 @@ EOF
 ###############
 # git setup
 ###############
-source ./"git-setup.sh"
+source /workspace/startupscript/git-setup.sh
 
 #############################
 # Mount buckets
 #############################
-source ./"${cloud}/resource-mount.sh"
+source /workspace/startupscript/${cloud}/resource-mount.sh
