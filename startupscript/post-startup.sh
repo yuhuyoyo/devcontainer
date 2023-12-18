@@ -184,7 +184,6 @@ EOF
 ###############
 # git setup
 ###############
-pwd
 source ${SCRIPT_DIR}/git-setup.sh
 
 #############################
