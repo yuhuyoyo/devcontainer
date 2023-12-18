@@ -21,9 +21,9 @@ function emit() {
 }
 readonly -f emit
 
-pwd
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-source ./${cloud}/get_metadata_attributes.sh
+source ${SCRIPT_DIR}/${cloud}/get_metadata_attributes.sh
 
 readonly RUN_AS_LOGIN_USER="sudo -u ${user} bash -l -c"
 
@@ -185,9 +185,9 @@ EOF
 # git setup
 ###############
 pwd
-source /workspace/startupscript/git-setup.sh
+source ${SCRIPT_DIR}/git-setup.sh
 
 #############################
 # Mount buckets
 #############################
-source /workspace/startupscript/${cloud}/resource-mount.sh
+source ${SCRIPT_DIR}/${cloud}/resource-mount.sh
