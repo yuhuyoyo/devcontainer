@@ -21,6 +21,8 @@ function emit() {
 }
 readonly -f emit
 
+pwd
+
 source /workspace/startupscript/${cloud}/get_metadata_attributes.sh
 
 readonly RUN_AS_LOGIN_USER="sudo -u ${user} bash -l -c"
@@ -182,6 +184,7 @@ EOF
 ###############
 # git setup
 ###############
+pwd
 source /workspace/startupscript/git-setup.sh
 
 #############################
