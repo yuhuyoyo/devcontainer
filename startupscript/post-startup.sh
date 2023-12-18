@@ -182,9 +182,9 @@ EOF
 ###############
 # git setup
 ###############
-source "git-setup.sh"
+source ./"git-setup.sh"
 
 #############################
 # Mount buckets
 #############################
-source "${cloud}/resource-mount.sh"
+source ./"${cloud}/resource-mount.sh"
