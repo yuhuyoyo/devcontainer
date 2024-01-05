@@ -10,7 +10,8 @@
         "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
             "packages": "shiny,shinydashboard,googleVis,github::jcheng5/googleCharts",
             "installSystemRequirements": true
-        }
+        },
+        "ghcr.io/devcontainers/features/aws-cli:1": {}
     },
   "remoteUser": "root"
 }
