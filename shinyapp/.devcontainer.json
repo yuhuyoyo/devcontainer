@@ -3,5 +3,5 @@
   "build": {
      "dockerfile": "Dockerfile"
    },
-  "runArgs": ["--name", "application-server"]
+  "runArgs": ["--name", "application-server", "-p=8180:8180"]
 }
