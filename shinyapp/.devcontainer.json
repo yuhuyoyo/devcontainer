@@ -1,6 +1,7 @@
 {
   "name": "Gapminder Dashboard",
   "build": {
-     "dockerfile": "Dockerfile"
+     "dockerfile": "Dockerfile",
+     "runArgs": ["--name", "application-server"]
    }
 }
