@@ -3,8 +3,7 @@
   "build": {
      "dockerfile": "Dockerfile"
    },
-  "appPort": [
-		"8180:8180"
-	],
+  "appPort": ["8180:8180"],
+  "overrideCommand": false,
   "runArgs": ["--name", "application-server"]
 }
