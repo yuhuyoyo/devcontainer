@@ -24,5 +24,6 @@
 	],
   "appPort": ["3838:3838"],
   "runArgs": ["--name", "application-server", "--network=app-network"],
+  "overrideCommand": false,
   "remoteUser": "shiny"
 }
