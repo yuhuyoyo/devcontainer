@@ -1,6 +1,27 @@
 {
   "name": "Shiny",
-  "image": "rocker/shiny",
+  "build": {
+		"dockerfile": "Dockerfile",
+		"context": ".",
+		"args": {
+			"VARIANT": "4",
+			"BASE_IMAGE": "rocker/shiny"
+		}
+	},
+  "features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/rocker-org/devcontainer-features/r-rig:1": {
+			"version": "none",
+			"vscodeRSupport": "full",
+			"installDevTools": true,
+			"installREnv": true,
+			"installRMarkdown": true,
+			"installRadian": true,
+		}
+	},
+   "overrideFeatureInstallOrder": [
+		"ghcr.io/devcontainers/features/common-utils"
+	],
   "appPort": ["3838:3838"],
   "runArgs": ["--name", "application-server", "--network=app-network"],
   "remoteUser": "shiny"
