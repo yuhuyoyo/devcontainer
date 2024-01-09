@@ -1,0 +1,7 @@
+{
+  "name": "Shiny",
+  "image": "rocker/shiny",
+  "appPort": ["3838:3838"],
+  "runArgs": ["--name", "application-server", "--network=app-network"],
+  "remoteUser": "shiny"
+}
