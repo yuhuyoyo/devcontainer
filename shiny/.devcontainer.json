@@ -26,8 +26,7 @@
     "3838:3838"
   ],
   "runArgs": [
-    "--name",
-    "application-server",
+    "--name=application-server",
     "--network=app-network"
   ],
   "overrideCommand": false,
