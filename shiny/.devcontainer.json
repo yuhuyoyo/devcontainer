@@ -16,7 +16,7 @@
 			"installDevTools": true,
 			"installREnv": true,
 			"installRMarkdown": true,
-			"installRadian": true,
+			"installRadian": true
 		}
 	},
    "overrideFeatureInstallOrder": [
