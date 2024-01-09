@@ -5,4 +5,5 @@ FROM ${BASE_IMAGE}:${VARIANT}
 
 RUN rm -rf /srv/shiny-server/*
 
-ADD https://github.com/rstudio/shiny-examples.git /srv/shiny-server/shiny-examples
+WORKDIR /srv/shiny-server/
+ADD https://github.com/rstudio/shiny-examples.git shiny-examples
