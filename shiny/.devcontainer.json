@@ -9,19 +9,8 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/rocker-org/devcontainer-features/r-rig:1": {
-      "version": "none",
-      "vscodeRSupport": "full",
-      "installDevTools": true,
-      "installREnv": true,
-      "installRMarkdown": true,
-      "installRadian": true
-    }
+    "ghcr.io/devcontainers/features/common-utils:2": {}
   },
-  "overrideFeatureInstallOrder": [
-    "ghcr.io/devcontainers/features/common-utils"
-  ],
   "appPort": [
     "3838:3838"
   ],
