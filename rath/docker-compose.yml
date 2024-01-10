@@ -2,6 +2,7 @@ version: "2"
 
 services:
   base:
+    container_name: "application-server"
     restart: always
     build:
       context: .
