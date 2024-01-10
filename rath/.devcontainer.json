@@ -3,6 +3,9 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "base",
   "shutdownAction": "none",
+  "runArgs": [
+    "-p", "application-server"
+  ],
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/rath",
   "remoteUser": "root"
