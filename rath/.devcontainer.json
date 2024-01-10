@@ -1,7 +1,7 @@
 {
   "name": "rath",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
+  "service": "base",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/rath",
