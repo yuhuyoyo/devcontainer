@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  app:
+  base:
     container_name: "application-server"
     restart: always
     build:
@@ -9,24 +9,17 @@ services:
       dockerfile: client.dockerfile
     ports:
       - 9083:80
-    networks:
-      - app-network
 
   connector-api:
     restart: always
+    network_mode: service:base
     build:
       context: ./services/connector
       dockerfile: Dockerfile
-    networks:
-      - app-network
   
   prediction-api:
     restart: always
+    network_mode: service:base
     build:
       context: ./services/prediction
       dockerfile: Dockerfile
-    networks:
-      - app-network
-networks:
-  app-network:
-    external: true
