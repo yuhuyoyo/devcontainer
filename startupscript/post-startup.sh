@@ -72,7 +72,7 @@ EOF
 ######################
 # Install java
 ######################
-source ${SCRIPT_DIR}/install-java.sh
+# source ${SCRIPT_DIR}/install-java.sh
 
 ######################
 # workbench CLI set up
