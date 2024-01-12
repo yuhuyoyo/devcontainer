@@ -5,14 +5,15 @@ set -o nounset
 set -o pipefail
 set -o xtrace
 
-if [ $# -ne 3 ]; then
-  echo "Usage: $0 user workDirectory gcp/aws"
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 user workDirectory"
   exit 1
 fi
 
 user="$1"
 workDirectory="$2"
-cloud="$3"
+echo "$CLOUD_PLATFORM"
+cloud="${CLOUD_PLATFORM:-gcp}"
 #######################################
 # Emit a message with a timestamp
 #######################################

@@ -9,6 +9,7 @@ services:
       - work:/home/rstudio
     ports:
       - '8787:8787'
+    env_file: devcontainer.env
     environment:
       "DISABLE_AUTH": "true"
     networks:

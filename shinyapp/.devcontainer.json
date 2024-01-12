@@ -5,5 +5,5 @@
    },
   "appPort": ["8180:8180"],
   "overrideCommand": false,
-  "runArgs": ["--name", "application-server"]
+  "runArgs": ["--name", "application-server", "--env-file","devcontainer.env"]
 }
