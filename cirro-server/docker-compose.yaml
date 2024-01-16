@@ -21,7 +21,7 @@ services:
     volumes:
       - mongodata:/data/db
     ports:
-      - 27017:27017
+      - '27017:27017'
     environment:
       - MONGO_INITDB_DATABASE=cirrocumulus
     networks:
