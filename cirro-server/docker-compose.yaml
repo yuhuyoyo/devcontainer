@@ -29,3 +29,5 @@ services:
 volumes:
   cirro_data:
   mongodata:
+networks:
+  app-network:
