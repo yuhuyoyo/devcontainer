@@ -7,27 +7,25 @@ services:
       dockerfile: Dockerfile
     restart: always
     volumes:
-      - ..:/workspace:cached
       - ./cirro_data:/cirro_data
-    command: cirro serve -b application-server:5000
+    command: cirro serve --db_uri mongodb://mongo:27017/cirrocumulus -b 0.0.0.0:3000 -w 2
     ports:
-      - '5000:5000'
-    cap_add:
-      - SYS_ADMIN
-    devices:
-      - /dev/fuse
-    security_opt:
-      - apparmor:unconfined
+      - '3000:3000'
     depends_on:
       - mongodb
+    networks:
+      - app-network
   mongodb:
-    image: mongodb/mongodb-community-server:6.0-ubi8
+    image: mongo:latest
+    restart: always
     volumes:
       - mongodata:/data/db
     ports:
       - 27017:27017
     environment:
       - MONGO_INITDB_DATABASE=cirrocumulus
+    networks:
+      - app-network
 volumes:
-  work:
+  cirro_data:
   mongodata:
