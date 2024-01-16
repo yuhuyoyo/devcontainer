@@ -15,7 +15,7 @@ services:
       - mongodb
     networks:
       - app-network
-  mongodb:
+  mongo:
     image: mongo:latest
     restart: always
     volumes:
