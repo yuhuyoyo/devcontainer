@@ -136,6 +136,11 @@ if [[ -n "${TERRA_WORKSPACE}" ]]; then
  ${RUN_AS_LOGIN_USER} "wb workspace set --id='${TERRA_WORKSPACE}'"
 fi
 
+#################
+# bash completion
+#################
+source ${SCRIPT_DIR}/bash-completion.sh
+
 ###############
 # git setup
 ###############
