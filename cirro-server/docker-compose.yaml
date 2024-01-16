@@ -8,6 +8,7 @@ services:
     restart: always
     volumes:
       - ./cirro_data:/cirro_data
+      - ..:/workspace:cached    
     command: cirro serve --db_uri mongodb://mongo:27017/cirrocumulus -b 0.0.0.0:3000
     ports:
       - '3000:3000'
