@@ -14,7 +14,7 @@ user="$1"
 workDirectory="$2"
 pwd
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 #######################################
 # Emit a message with a timestamp
 #######################################
