@@ -12,6 +12,7 @@ fi
 
 user="$1"
 workDirectory="$2"
+pwd
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 #######################################
@@ -19,6 +20,8 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 #######################################
 source ${SCRIPT_DIR}/emit.sh
 
+echo ${SCRIPT_DIR}
+echo $(dirname "${BASH_SOURCE[0]}")
 function get_metadata_value() {
  local metadata_path="${1}"
  curl --retry 5 -s -f \
