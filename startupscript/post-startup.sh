@@ -84,8 +84,6 @@ if [[ "${PATH}:" != "/usr/bin:"* ]]; then
 fi
 EOF
 
-pwd
-source ../startupscript/install-java.sh
 source ${SCRIPT_DIR}/install-java.sh
 
 # Install & configure the Workbench CLI
