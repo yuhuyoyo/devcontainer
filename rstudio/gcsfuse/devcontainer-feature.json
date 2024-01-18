@@ -1,8 +1,0 @@
-{
-    "name": "gcsfuse",
-    "id": "gcsfuse",
-    "version": "1.0.0",
-    "description": "A gcs fuse feature",
-    "capAdd": ["SYS_ADMIN"],
-    "securityOpt": ["apparmor:unconfined"]
-}
