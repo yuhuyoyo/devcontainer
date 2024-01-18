@@ -1,4 +1,15 @@
-# Installs gcsfuse if it is not already installed.
+#!/bin/bash
+
+# resource-mount.sh
+#
+# Installs gcsfuse if it is not already installed and mount resources.
+#
+# Note that this script is intended to be source from the "post-startup.sh" script
+# and is dependent on some functions and variables already being set:
+#
+# - emit (function)
+# - Workbench CLI is installed
+ 
 if ! which gcsfuse >/dev/null 2>&1; then
   emit "Installing gcsfuse..."
 
@@ -12,4 +23,4 @@ else
   emit "gcsfuse already installed. Skipping installation."
 fi
 
-${RUN_AS_LOGIN_USER} "terra resource mount"
+${RUN_AS_LOGIN_USER} "wb resource mount"
