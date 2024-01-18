@@ -20,14 +20,7 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 #######################################
 source ${SCRIPT_DIR}/emit.sh
 
-echo ${SCRIPT_DIR}
-echo $(dirname "${BASH_SOURCE[0]}")
-function get_metadata_value() {
- local metadata_path="${1}"
- curl --retry 5 -s -f \
-   -H "Metadata-Flavor: Google" \
-   "http://metadata/computeMetadata/v1/${metadata_path}"
-}
+source ${SCRIPT_DIR}/${cloud}/get_metadata_attributes.sh
 
 readonly RUN_AS_LOGIN_USER="sudo -u ${user} bash -l -c"
 
