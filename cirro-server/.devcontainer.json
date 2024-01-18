@@ -5,5 +5,12 @@
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/cirro-server",
+  "postCreateCommand": ["../startupscript/post-startup.sh", "root", "/home/vscode"],
+  "postStartCommand": "wb resource mount",
+  "features": {
+      "ghcr.io/devcontainers/features/git:1": {},
+      "ghcr.io/devcontainers/features/aws-cli:1": {},
+      "ghcr.io/devcontainers/features/java:1": {}
+  },
   "remoteUser": "root"
 }

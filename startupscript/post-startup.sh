@@ -12,13 +12,16 @@ fi
 
 user="$1"
 workDirectory="$2"
+pwd
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 #######################################
 # Emit a message with a timestamp
 #######################################
 source ${SCRIPT_DIR}/emit.sh
 
+echo ${SCRIPT_DIR}
+echo $(dirname "${BASH_SOURCE[0]}")
 function get_metadata_value() {
  local metadata_path="${1}"
  curl --retry 5 -s -f \
@@ -134,7 +137,6 @@ readonly TERRA_WORKSPACE="$(get_metadata_value "instance/attributes/terra-worksp
 if [[ -n "${TERRA_WORKSPACE}" ]]; then
  ${RUN_AS_LOGIN_USER} "wb workspace set --id='${TERRA_WORKSPACE}'"
 fi
-
 
 #################
 # bash completion
