@@ -9,7 +9,10 @@
   "postStartCommand": "sudo -u abc wb resource mount",
   "features": {
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/devcontainers/features/java:1": {}
+    "ghcr.io/devcontainers/features/java:1": {},
+    "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+      "packages": ["lsb-core", "fuse"]
+    }
   },
   "remoteUser": "root"
 }
