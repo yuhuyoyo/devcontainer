@@ -6,6 +6,7 @@
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/jupyter",
   "postCreateCommand": ["../post-startup.sh", "jovyan", "/home/jovyan"],
+  "postStartCommand": "sudo -u jovyan wb resource mount",
   "features": {
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/devcontainers/features/java:1": {}
