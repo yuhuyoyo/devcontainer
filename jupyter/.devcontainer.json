@@ -1,6 +1,9 @@
 {
   "name": "Jupyter app",
-  "image": "mcr.microsoft.com/vscode/devcontainers/python:3",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/jupyter",
@@ -16,7 +19,7 @@
      }
   },
   "appPort": [
-    "8888:8888"
+    "8080:8080"
   ],
   "runArgs": [
     "--name=application-server",
