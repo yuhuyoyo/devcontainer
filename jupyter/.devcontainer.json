@@ -1,9 +1,6 @@
 {
   "name": "Jupyter app",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": "."
-  },
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:debian",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/jupyter",
@@ -13,6 +10,10 @@
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/devcontainers/features/java:1": {}
+    "ghcr.io/devcontainers/features/python:1": {
+    	"installJupyterlab": "true",
+    	"configureJupyterlabAllowOrigin": "*",
+     }
   },
   "appPort": [
     "8888:8888"
