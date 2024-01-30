@@ -23,9 +23,12 @@
   "appPort": [
     "8080:8080"
   ],
+  "capAdd": ["SYS_ADMIN"],
+  "securityOpt": ["apparmor:unconfined"],
   "runArgs": [
     "--name=application-server",
-    "--network=app-network"
+    "--network=app-network",
+    "--device=/dev/fuse"
   ],
   "overrideCommand": false,
   "remoteUser": "root"
