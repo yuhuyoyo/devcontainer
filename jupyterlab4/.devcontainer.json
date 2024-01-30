@@ -6,7 +6,7 @@
   },
   "shutdownAction": "none",
   // Open the sub-folder with the source code
-  "workspaceFolder": "/workspace/jupyter",
+  "workspaceFolder": "/workspaces/devcontainer/jupyter",
   "postCreateCommand": ["../startupscript/post-startup.sh", "jupyter", "/home/jupyter"],
   "postStartCommand": "sudo -u jupyter wb resource mount",
   "features": {
@@ -17,11 +17,13 @@
   "appPort": [
     "8080:8080"
   ],
+  "capAdd": ["SYS_ADMIN"],
+  "securityOpt": ["apparmor:unconfined"],
   "runArgs": [
     "--name=application-server",
-    "--network=app-network"
+    "--network=app-network",
+    "--device=/dev/fuse"
   ],
-  "mounts": [{ "source": "..", "target": "/workspace", "type": "volume" }],
   "overrideCommand": false,
   "remoteUser": "root"
 }
