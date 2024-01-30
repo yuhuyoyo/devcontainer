@@ -1,23 +1,26 @@
 {
   "name": "Jupyter app",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": "."
-  },
+  "image": "gcr.io/deeplearning-platform-release/tf-cpu.2-11.py310",
   "shutdownAction": "none",
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/jupyter",
   "postCreateCommand": ["../startupscript/post-startup.sh", "jupyter", "/home/jupyter"],
-  "postStartCommand": "sudo -u jovyan wb resource mount",
+  "postStartCommand": "sudo -u jupyter wb resource mount",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/devcontainers/features/java:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2.4.1": {
+      "username": "jupyter"
+    },
     "ghcr.io/devcontainers/features/python:1": {
     	"installJupyterlab": "true",
     	"configureJupyterlabAllowOrigin": "*"
-     }
+     },
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/java:1": {}
   },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/devcontainers/features/python"
+  ],
   "appPort": [
     "8080:8080"
   ],
