@@ -27,7 +27,6 @@
     "--name=application-server",
     "--network=app-network"
   ],
-  "mounts": [{ "source": "..", "target": "/workspace", "type": "volume" }],
   "overrideCommand": false,
   "remoteUser": "root"
 }
