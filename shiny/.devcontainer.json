@@ -18,6 +18,9 @@
     "--name=application-server",
     "--network=app-network"
   ],
+  "workspaceFolder": "/workspaces/devcontainer/shiny",
+  "postCreateCommand": ["../startupscript/post-startup.sh", "shiny", "/home/shiny"],
+  "postStartCommand": "sudo -u shiny wb resource mount",
   "overrideCommand": false,
-  "remoteUser": "shiny"
+  "remoteUser": "root"
 }
