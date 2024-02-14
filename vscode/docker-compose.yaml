@@ -6,7 +6,6 @@ services:
     restart: always
     volumes:
       - ..:/workspace:cached
-      - work:/config
     ports:
       - '8443:8443'
     environment:
@@ -23,5 +22,3 @@ services:
 networks:
   app-network:
     external: true
-volumes:
-  work:
