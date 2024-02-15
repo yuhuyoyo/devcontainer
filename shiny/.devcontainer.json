@@ -23,8 +23,8 @@
     "--device=/dev/fuse"
   ],
   "workspaceFolder": "/workspaces/devcontainer/shiny",
-  "postCreateCommand": ["../startupscript/post-startup.sh", "shiny", "/home/shiny", "gcp", "true"],
-  "postStartCommand": "sudo -u shiny wb resource mount",
+  "postCreateCommand": ["../startupscript/post-startup.sh", "root", "/root", "gcp", "true"],
+  "postStartCommand": "sudo -u root wb resource mount",
   "overrideCommand": false,
   "remoteUser": "root"
 }
