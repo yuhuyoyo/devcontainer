@@ -1,0 +1,16 @@
+{
+  "name": "desktop lite",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+  "appPort": [
+    "6080:6080"
+  ],
+  "runArgs": [
+    "--name=application-server",
+    "--network=app-network"
+  ],
+  "overrideCommand": false,
+  "remoteUser": "root"
+}
