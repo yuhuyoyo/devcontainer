@@ -1,6 +1,6 @@
 {
   "name": "desktop lite",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "image": "ghcr.io/rocker-org/devcontainer/tidyverse:4.2",
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
