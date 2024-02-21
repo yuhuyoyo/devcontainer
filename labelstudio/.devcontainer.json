@@ -1,9 +1,6 @@
 {
   "name": "label studio",
   "image": "heartexlabs/label-studio:latest",
-  "build": {
-    "context": ".."
-  },
   "service": "app",
   "shutdownAction": "none",
   "appPort": [
