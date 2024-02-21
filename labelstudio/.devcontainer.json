@@ -14,7 +14,7 @@
     "--network=app-network"
   ],
   "containerEnv": {
-    "LABEL_STUDIO_USERNAME": "labelstudio",
+    "LABEL_STUDIO_USERNAME": "labelstudio@localhost",
     "LABEL_STUDIO_PASSWORD": "pwd"
   },
   "overrideCommand": false,
