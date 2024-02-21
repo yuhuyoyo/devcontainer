@@ -1,0 +1,27 @@
+{
+  "name": "label studio",
+  "image": "heartexlabs/label-studio:latest",
+  "build": {
+    "context": ".."
+  },
+  "service": "app",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/labelstudio",
+  "postCreateCommand": ["../startupscript/post-startup.sh", "labelstudio", "/home/labelstudio", "gcp", "true"],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/java:1": {} 
+  },
+  "appPort": [
+    "8080:8080"
+  ],
+  "capAdd": ["SYS_ADMIN"],
+  "securityOpt": ["apparmor:unconfined"],
+  "runArgs": [
+    "--name=application-server",
+    "--network=app-network",
+    "--device=/dev/fuse"
+  ],
+  "overrideCommand": false,
+  "remoteUser": "root"
+}
