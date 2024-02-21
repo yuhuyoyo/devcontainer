@@ -22,6 +22,10 @@
     "--network=app-network",
     "--device=/dev/fuse"
   ],
+  "containerEnv": {
+    "LABEL_STUDIO_USERNAME": "labelstudio",
+    "LABEL_STUDIO_PASSWORD": "pwd"
+  },
   "overrideCommand": false,
   "remoteUser": "root"
 }
