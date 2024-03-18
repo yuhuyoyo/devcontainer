@@ -13,12 +13,13 @@
 # Note that this script is intended to be source from the "post-startup.sh" script 
 # and is dependent on some variables and packages already being set up:
 #
-# - emit (function)
+# - emit:  function to echo a message with a timestamp
 # - USER_BASHRC: path to user's ~/.bashrc file
 # - CLOUD: aws/gcp
 # - LOG_IN: whether the user is logged into the wb CLI as part of the script
 # - RUN_AS_LOGIN_USER: run command as non-root Unix user (ex: jupyter, dataproc)
-# - must be run after install-cli.sh
+# 
+# This script must be run after install-cli.sh
 
 emit "Customize user bashrc ..."
 
