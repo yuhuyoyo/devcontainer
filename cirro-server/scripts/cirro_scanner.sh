@@ -29,6 +29,7 @@ scan_folders_and_create_datasets() {
 }
 readonly -f scan_folders_and_create_datasets
 
+wb resource mount
 # Infinite loop to continuously scan every 5 seconds
 while true; do
     # Call the function to perform the scanning
