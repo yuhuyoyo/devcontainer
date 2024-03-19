@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Define the function to check if folder path exists in the JSON array
-dataset_exists() {
+function dataset_exists() {
     local url="$1"
-    local array_json=$(curl -s localhost:3000/api/datasets)
-    local exists=$(echo "$array_json" | jq -e --arg path "$url" '.[] | select(.url == $path)' | wc -l)
-    echo "$exists"
+    curl -s localhost:3000/api/datasets | \
+        jq -e --arg path "$url" '.[] | select(.url == $path)' | \
+        wc -l
 }
 readonly -f dataset_exists
 
-create_dataset() {
+function create_dataset() {
     local url="$1"
     local name=$(basename "$url")
     curl -X POST -F "name=$name" -F "url=$url" localhost:3000/api/dataset
@@ -17,7 +17,7 @@ create_dataset() {
 readonly -f create_dataset
 
 # Define the function to perform the scanning
-scan_folders_and_create_datasets() {
+function scan_folders_and_create_datasets() {
     # Search for folders with name *.zarr and print their names
     find /root/workspace -type d -name '*.zarr' | while read -r folder; do
         if [[ "$(dataset_exists "$folder")" -eq "0" ]]; then
