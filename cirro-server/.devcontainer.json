@@ -6,7 +6,7 @@
   // Open the sub-folder with the source code
   "workspaceFolder": "/workspace/cirro-server",
   "postCreateCommand": ["../startupscript/post-startup.sh", "root", "/root", "gcp", "true"],
-  "postStartCommand": "nohup bash -c './scripts/cirro_scanner.sh &'",
+  "postStartCommand": "nohup bash -c 'true && ./scripts/cirro_scanner.sh &'",
   "features": {
       "ghcr.io/devcontainers/features/git:1": {},
       "ghcr.io/devcontainers/features/aws-cli:1": {},
