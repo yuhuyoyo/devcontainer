@@ -7,14 +7,17 @@
   "workspaceFolder": "/workspace/rstudio",
   "postCreateCommand": ["../startupscript/post-startup.sh", "rstudio", "/home/rstudio", "gcp", "true"],
   // re-mount bucket files on container start up
-  "postStartCommand": "sudo -u rstudio wb resource mount",
+  "postStartCommand": "sudo -u rstudio wb resource mount; nohup bash -c './scripts/idle-shutdown.sh &'",
   "features": {
 	"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
         	"packages": "shiny,shinydashboard",
         	"installSystemRequirements": true
         },
         "ghcr.io/devcontainers/features/aws-cli:1": {},
-        "ghcr.io/devcontainers/features/java:1": {} 
+        "ghcr.io/devcontainers/features/java:1": {},
+        "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+        	"packages": "bc"
+        }
    },
   "remoteUser": "root"
 }
