@@ -5,7 +5,7 @@
 #wait_minutes - length of time window in which threshold should not be broken. By default 60 (minutes)
 
 threshold=0.1
-wait_minutes=60
+wait_minutes=10
 
 count=0
 while true
