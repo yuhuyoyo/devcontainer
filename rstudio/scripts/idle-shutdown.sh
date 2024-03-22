@@ -13,6 +13,7 @@ do
 
   load=$(uptime | sed -e 's/.*load average: //g' | awk '{ print $1 }') # 1-minute average load
   load="${load//,}" # remove trailing comma
+  echo "cpu load is $load"
   res=$(echo $load'<'$threshold | bc -l)
   if (( $res ))
   then
