@@ -7,6 +7,14 @@
 threshold=0.1
 wait_minutes=10
 
+function set_cpu_last_active() {
+  local attr_value="${1}"
+  curl -s -X PUT --data "${attr_value}" \
+    -H "Metadata-Flavor: Google" \
+    "http://metadata.google.internal/computeMetadata/v1/instance/guest-attributes/cpu-utilization/last-active"
+}
+readonly -f set_cpu_last_active
+
 count=0
 while true
 do
@@ -21,16 +29,9 @@ do
     ((count+=1))
   else
     count=0
+    set_cpu_last_active $(date +'%s')
   fi
   echo "Idle minutes count = $count"
-
-  if (( count>wait_minutes ))
-  then
-    echo Shutting down
-    # wait a little bit more before actually pulling the plug
-    sleep 300
-    sudo poweroff
-  fi
 
   sleep 60
 
