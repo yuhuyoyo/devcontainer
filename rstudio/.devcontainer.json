@@ -14,6 +14,7 @@
         	"installSystemRequirements": true
         },
         "ghcr.io/devcontainers/features/aws-cli:1": {},
+	"ghcr.io/dhoeric/features/google-cloud-cli:1": {},
         "ghcr.io/devcontainers/features/java:1": {},
         "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
         	"packages": "bc"
