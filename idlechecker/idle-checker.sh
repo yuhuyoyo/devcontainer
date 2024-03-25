@@ -20,8 +20,7 @@ do
   load=$(uptime | sed -e 's/.*load average: //g' | awk '{ print $1 }') # 1-minute average load
   load="${load//,}" # remove trailing comma
   echo "cpu load is $load"
-  res=$(echo $load'<'$threshold | bc -l)
-  if (( $load < $threshold )); then
+  if (( $(echo "$threshold > $load" |bc -l) )); then
     echo "Idling.."
   else
     set_cpu_last_active $(date +'%s')
