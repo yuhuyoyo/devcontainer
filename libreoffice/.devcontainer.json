@@ -3,6 +3,6 @@
   "dockerComposeFile": "docker-compose.yaml",
   "service": "app",
   "shutdownAction": "none",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspace/libreoffice",
   "remoteUser": "root"
 }
