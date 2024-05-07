@@ -1,0 +1,29 @@
+{
+    "id": "libre-office",
+    "version": "0.0.1",
+    "name": "Libre office",
+    "description": "A Template to run libre office on workbench",
+    "options": {
+        "cloud": {
+            "type": "string",
+            "description": "VM cloud environment",
+            "proposals": [
+                "gcp",
+                "aws"
+            ],
+            "default": "gcp"
+        },
+        "login": {
+            "type": "string",
+            "description": "Whether to log in to workbench CLI",
+            "proposals": [
+                "true",
+                "false"
+            ],
+            "default": "false"
+        }
+    },
+    "platforms": [
+        "Any"
+    ]
+}
