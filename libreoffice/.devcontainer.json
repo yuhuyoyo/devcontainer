@@ -8,11 +8,6 @@
   // re-mount bucket files on container start up
   "postStartCommand": "/bin/bash -c '[[ \"${templateOption:login}\" == \"true\" ]] && sudo -u abc wb resource mount || true'",
   "features": {
-	"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-        	"packages": "shiny,shinydashboard",
-        	"installSystemRequirements": true
-        },
-        "ghcr.io/devcontainers/features/aws-cli:1": {},
         "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
         "ghcr.io/devcontainers/features/java:1": {} 
    },
